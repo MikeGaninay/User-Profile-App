@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Switch, Image, ImageBackground } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from "react-native";
 
 export default function UserProfile() {
   return (
@@ -16,7 +16,7 @@ export default function UserProfile() {
             style={styles.profileImage}
           />
 
-          {/* User Details Section */}
+          {/* User Details Section - now below the image and aligned left */}
           <View style={styles.textContainer}>
             <Text style={styles.userName}>Mikedyñl</Text>
             <Text style={styles.userRole}>Ganinay</Text>
@@ -45,12 +45,12 @@ export default function UserProfile() {
         </TouchableOpacity>
 
         <View style={styles.option}>
-        <TouchableOpacity style={styles.option}>
-          <Text style={styles.optionText}>Dark Mode</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.option}>
+            <Text style={styles.optionText}>Dark Mode</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* Sign Out */}
+        {/* Sign Out - centered */}
         <TouchableOpacity style={styles.signOutButton}>
           <Text style={styles.signOutText}>Sign Out</Text>
         </TouchableOpacity>
@@ -76,23 +76,22 @@ const styles = StyleSheet.create({
     paddingVertical: 20, 
   },
   profileSection: {
-    flexDirection: "row", 
-    alignItems: "center",
+    alignItems: "flex-start", // Align to the left
     marginTop: 20,
     paddingBottom: 20, 
     borderBottomWidth: 1,
     borderBottomColor: "#ddd", 
   },
   profileImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 150,
+    height: 150,
+    borderRadius: 80,
     borderWidth: 3,
     borderColor: "#fff", 
-    marginRight: 15, 
+    marginBottom: 15,  // Add some space below the image
   },
   textContainer: {
-    alignItems: "flex-start",
+    alignItems: "flex-start", // Align text to the left
   },
   userName: {
     fontSize: 22,
@@ -107,10 +106,11 @@ const styles = StyleSheet.create({
   joinedText: {
     fontSize: 12,
     color: "#999",
-    marginTop: 5,
+    marginTop: 10,
   },
   sectionHeader: {
     paddingVertical: 10,
+    alignItems: "flex-start", // Align section titles to the left
   },
   sectionHeaderText: {
     fontSize: 16,
@@ -128,10 +128,11 @@ const styles = StyleSheet.create({
   optionText: {
     fontSize: 18,
     color: "#333",
+    textAlign: "left", // Align option text to the left
   },
   signOutButton: {
     padding: 15,
-    alignItems: "center",
+    alignItems: "center", // Center align the Sign Out button
     marginTop: 20,
   },
   signOutText: {
