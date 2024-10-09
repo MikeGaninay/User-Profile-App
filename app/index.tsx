@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function UserProfile() {
   return (
@@ -16,10 +17,15 @@ export default function UserProfile() {
               source={{ uri: "https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/444469801_1521467708712363_1128523499879770214_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEZLcpFc6Z3Z5jgbSu2zKgW1zh1NsYQ4OLXOHU2xhDg4u0xyXb5uNnFb6YtDieqKcwjuG7lTMsuTf0lXGyCRRDy&_nc_ohc=qVhLbLq1QD8Q7kNvgG7d-51&_nc_ht=scontent-mnl1-1.xx&_nc_gid=AGFZozy9NVmo_aMh3CSjb6I&oh=00_AYDVFkHg2uEm8mQqD2qCFPk-2OPuQmo_w1YCoPclmbHmkg&oe=670C6E9A" }} 
               style={styles.profileImage}
             />
-            <Text style={styles.joinedText}>Joined 1 year ago</Text>
+            
+            {/* Joined Text with Clock Icon */}
+            <View style={styles.joinedContainer}>
+              <Icon name="clock-o" size={16} color="#999" style={styles.clockIcon} />
+              <Text style={styles.joinedText}>Joined 1 year ago</Text>
+            </View>
           </View>
 
-          {/* User Details Section - now below the image */}
+          {/* User Details Section */}
           <View style={styles.textContainer}>
             <Text style={styles.userName}>Mikedyñl</Text>
             <Text style={styles.userRole}>Ganinay</Text>
@@ -94,11 +100,22 @@ const styles = StyleSheet.create({
     borderRadius: 80,
     borderWidth: 3,
     borderColor: "#fff", 
-    marginRight: 10, 
+    marginRight: 10,  
+  },
+  joinedContainer: {
+    flexDirection: "row", 
+    alignItems: "center",
+  },
+  clockIcon: {
+    marginRight: 5,
+  },
+  joinedText: {
+    fontSize: 12,
+    color: "#999",
   },
   textContainer: {
     alignItems: "flex-start", 
-    marginTop: 10, 
+    marginTop: 10,
   },
   userName: {
     fontSize: 22,
@@ -109,10 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#666",
     marginTop: 3,
-  },
-  joinedText: {
-    fontSize: 15,
-    color: "#999",
   },
   sectionHeader: {
     paddingVertical: 10,
